@@ -1,0 +1,22 @@
+{
+  "name": "Daily11AMUTCTrigger",
+  "properties": {
+    "type": "ScheduleTrigger",
+    "pipelines": [
+      {
+        "pipelineReference": {
+          "referenceName": "SampleWaitPipeline",
+          "type": "PipelineReference"
+        }
+      }
+    ],
+    "typeProperties": {
+      "recurrence": {
+        "frequency": "Day",
+        "interval": 1,
+        "startTime": "2026-06-15T11:00:00Z",
+        "timeZone": "UTC"
+      }
+    }
+  }
+}
