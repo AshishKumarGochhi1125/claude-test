@@ -12,7 +12,7 @@
     ],
     "typeProperties": {
       "recurrence": {
-        "frequency": "Monthly",
+        "frequency": "Daily",
         "interval": 1,
         "startTime": "2026-06-15T02:00:00Z",
         "timeZone": "UTC"
