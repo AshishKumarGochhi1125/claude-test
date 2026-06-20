@@ -1,0 +1,107 @@
+[
+  {
+    "id": "FAQ-001",
+    "title": "How to reset your Windows password",
+    "keywords": ["password", "reset", "forgot", "locked out", "windows login"],
+    "content": "To reset your Windows password: 1) Go to the login screen and click 'Forgot password'. 2) Verify your identity via your registered mobile number or backup email. 3) Follow the self-service portal at https://reset.internal/. If self-service fails, contact the IDENTITY team with your employee ID.",
+    "queue": "IDENTITY"
+  },
+  {
+    "id": "FAQ-002",
+    "title": "VPN connection troubleshooting",
+    "keywords": ["vpn", "connect", "remote", "cisco anyconnect", "network", "tunnel"],
+    "content": "Common VPN fixes: 1) Restart the Cisco AnyConnect client. 2) Ensure you are not on a restricted network (hotel Wi-Fi often blocks VPN). 3) Try disconnecting and reconnecting. 4) If MFA prompt does not appear, reinstall AnyConnect from the software portal. Persistent issues should be routed to NETWORKING.",
+    "queue": "NETWORKING"
+  },
+  {
+    "id": "FAQ-003",
+    "title": "Request access to a new application",
+    "keywords": ["access", "permission", "application", "software", "request", "provisioning"],
+    "content": "To request access to a new application: 1) Submit a request via the IT portal at https://portal.internal/access. 2) Your manager must approve the request. 3) Standard provisioning takes 1 business day. For urgent access, include justification and your manager will be contacted directly. Finance, payroll, and HR systems require additional approval.",
+    "queue": "IDENTITY"
+  },
+  {
+    "id": "FAQ-004",
+    "title": "Laptop not turning on",
+    "keywords": ["laptop", "won't turn on", "dead", "black screen", "power", "hardware"],
+    "content": "If your laptop won't turn on: 1) Ensure it is plugged in and the charger LED is lit. 2) Hold the power button for 10 seconds to force a hard reset. 3) Try removing the battery (if removable) and reseating it. 4) If none of these work, submit a HARDWARE ticket and IT will arrange a loaner device within 4 hours.",
+    "queue": "HARDWARE"
+  },
+  {
+    "id": "FAQ-005",
+    "title": "How to install approved software",
+    "keywords": ["install", "software", "application", "download", "self-service"],
+    "content": "Use the Company Software Center (Start Menu > Software Center) to install pre-approved applications without admin rights. If your software is not listed, submit a SOFTWARE ticket with the application name, version, and business justification. Unapproved software installation requires a security review.",
+    "queue": "SOFTWARE"
+  },
+  {
+    "id": "FAQ-006",
+    "title": "MFA / two-factor authentication setup",
+    "keywords": ["mfa", "two-factor", "2fa", "authenticator", "microsoft authenticator", "otp"],
+    "content": "To set up MFA: 1) Download Microsoft Authenticator on your mobile device. 2) Go to https://aka.ms/mfasetup and sign in. 3) Follow the prompts to add your account. If you lose access to your MFA device, contact the IDENTITY team immediately — do not attempt to bypass MFA.",
+    "queue": "IDENTITY"
+  },
+  {
+    "id": "FAQ-007",
+    "title": "Printer not printing / offline",
+    "keywords": ["printer", "print", "offline", "stuck", "queue", "spooler"],
+    "content": "Common printer fixes: 1) Restart the print spooler: Services > Print Spooler > Restart. 2) Delete stuck jobs from the print queue. 3) Ensure the printer is powered on and connected to the network. 4) Re-add the printer via Settings > Printers. If the printer shows offline persistently, submit a HARDWARE ticket with the printer asset tag.",
+    "queue": "HARDWARE"
+  },
+  {
+    "id": "FAQ-008",
+    "title": "Suspected phishing email",
+    "keywords": ["phishing", "suspicious email", "scam", "malware", "clicked link", "fake email"],
+    "content": "If you received a suspicious email: 1) Do NOT click any links or download attachments. 2) Report it immediately using the Phishing Report button in Outlook. 3) If you already clicked a link, disconnect from the network immediately and call the Security hotline: ext. 9111. This is treated as a P1 security incident.",
+    "queue": "SECURITY"
+  },
+  {
+    "id": "FAQ-009",
+    "title": "Wi-Fi not working in the office",
+    "keywords": ["wifi", "wi-fi", "wireless", "no internet", "office network", "cannot connect"],
+    "content": "To fix Wi-Fi issues in the office: 1) Forget and reconnect to the CorpWiFi network. 2) Ensure you are connecting to CorpWiFi (not CorpGuest). 3) Restart your network adapter: Device Manager > Network Adapters > Disable/Enable. If the issue persists across multiple devices in the same area, it may be an access point issue — report to NETWORKING with your floor/room number.",
+    "queue": "NETWORKING"
+  },
+  {
+    "id": "FAQ-010",
+    "title": "Account locked after too many failed login attempts",
+    "keywords": ["account locked", "too many attempts", "locked", "active directory", "ad"],
+    "content": "If your account is locked: 1) Wait 15 minutes for automatic unlock (policy: 5 failed attempts = 15-minute lockout). 2) If still locked after 15 minutes, use the self-service unlock at https://reset.internal/unlock. 3) If self-service is unavailable, contact the IDENTITY team with your employee ID and manager's name for manual unlock.",
+    "queue": "IDENTITY"
+  },
+  {
+    "id": "FAQ-011",
+    "title": "How to set up email on mobile device",
+    "keywords": ["email", "mobile", "phone", "outlook", "iphone", "android", "exchange"],
+    "content": "To set up corporate email on your mobile device: 1) Install the Microsoft Outlook app from your device's app store. 2) Sign in with your corporate email address. 3) Complete MFA verification. 4) Your IT administrator may enroll your device in Intune MDM — approve this when prompted. Personal devices require MDM enrollment per policy.",
+    "queue": "SOFTWARE"
+  },
+  {
+    "id": "FAQ-012",
+    "title": "How to request a software license",
+    "keywords": ["license", "software license", "adobe", "microsoft", "autocad", "seat"],
+    "content": "To request a software license: 1) Check if an available seat exists via the IT portal license inventory. 2) If no seat is available, submit a purchase request with your cost center code and manager approval. 3) Standard license provisioning takes 2 business days. Enterprise licenses (Adobe, AutoCAD) require department head approval.",
+    "queue": "SOFTWARE"
+  },
+  {
+    "id": "FAQ-013",
+    "title": "DNS / name resolution issues",
+    "keywords": ["dns", "name resolution", "cannot reach server", "domain", "nslookup"],
+    "content": "If you cannot reach internal servers by name: 1) Try accessing by IP address to isolate DNS vs. connectivity. 2) Run: ipconfig /flushdns. 3) Check your DNS server settings — they should point to 10.0.0.1 (primary) and 10.0.0.2 (secondary). 4) If the issue affects multiple users, escalate to NETWORKING immediately as it may indicate a DNS server outage.",
+    "queue": "NETWORKING"
+  },
+  {
+    "id": "FAQ-014",
+    "title": "Data loss or accidental file deletion",
+    "keywords": ["deleted", "lost file", "data loss", "recover", "restore", "backup"],
+    "content": "For accidental file deletion: 1) Check the Recycle Bin first. 2) Check OneDrive version history (right-click > Version History). 3) If the file was on a network share, contact IT — daily backups are retained for 30 days. IMPORTANT: Do not attempt to write new data to the affected drive. Submit a P2 ticket immediately for faster response.",
+    "queue": "SOFTWARE"
+  },
+  {
+    "id": "FAQ-015",
+    "title": "How to report a security incident",
+    "keywords": ["security incident", "breach", "hacked", "ransomware", "data breach", "report"],
+    "content": "To report a security incident: 1) Call the Security Operations Center immediately: ext. 9111 (24/7). 2) Do NOT attempt to remediate the issue yourself. 3) Preserve all evidence — do not shut down or wipe the affected device. 4) Submit a ticket via the portal marked URGENT/SECURITY. All security incidents are treated as P1 and bypass normal triage.",
+    "queue": "SECURITY"
+  }
+]

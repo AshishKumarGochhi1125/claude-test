@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Submission — IT Helpdesk Triage Agent</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    /* Cards */
+    .card {
+      background: #1e2230;
+      border: 1px solid #2d3348;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h2 .icon {
+      font-size: 1.1rem;
+    }
+
+    /* Team table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th {
+      text-align: left;
+      color: #64748b;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid #2d3348;
+    }
+
+    td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid #1a1f2e;
+      color: #cbd5e1;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    /* Meta pills */
+    .meta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-size: 0.72rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    /* Challenge table */
+    .challenge-table { font-size: 0.9rem; }
+
+    .challenge-table th { width: 5%; }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .status-done     { background: #14532d; color: #86efac; }
+    .status-partial  { background: #78350f; color: #fcd34d; }
+    .status-skipped  { background: #1e293b; color: #64748b; }
+
+    /* Prose sections */
+    .prose p {
+      color: #94a3b8;
+      line-height: 1.75;
+      font-size: 0.93rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* Key decisions list */
+    .decision-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .decision-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .decision-list li::before {
+      content: "→";
+      color: #6366f1;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* Next steps */
+    .next-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .next-list li {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .next-list li::before {
+      content: "◦";
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      color: #334155;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="badge">Competition Submission</div>
+      <h1>IT Helpdesk Triage Agent</h1>
+      <p>Scenario 3 — Agentic Solution &nbsp;·&nbsp; Session 5</p>
+    </header>
+
+    <!-- Team Members -->
+    <div class="card">
+      <h2><span class="icon">👥</span> Team Members</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role(s) Played</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ashish</td>
+            <td>Developer, Architect, PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Scenario -->
+    <div class="card">
+      <h2><span class="icon">🎯</span> Scenario</h2>
+      <div class="meta-row">
+        <div class="meta-item">
+          <span class="meta-label">Scenario #</span>
+          <span class="meta-value">3 — Agentic Solution</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Domain</span>
+          <span class="meta-value">IT Helpdesk</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Intake Type</span>
+          <span class="meta-value">Support tickets, email, chat</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Built -->
+    <div class="card">
+      <h2><span class="icon">🔨</span> What We Built</h2>
+      <div class="prose">
+        <p>
+          An intelligent IT Helpdesk triage agent that ingests inbound support requests,
+          classifies them into one of seven routing queues (SECURITY, NETWORKING, IDENTITY,
+          HARDWARE, SOFTWARE, AUTO_RESOLVE, ESCALATION), assigns a P1–P4 priority, and
+          decides the appropriate action — auto-resolve, route, or escalate — all via the
+          Claude API on AWS Bedrock.
+        </p>
+        <p>
+          The agent runs a full agentic loop: it calls two tools (<code>knowledge_lookup</code>
+          and <code>check_status</code>) to enrich its context before classifying. It enforces
+          a hard guardrail layer before touching Claude (keyword triggers, unknown sender
+          domains) and applies post-loop mandate rules (confidence threshold, P1/P2
+          auto-escalation, SECURITY lockout).
+        </p>
+        <p>
+          The eval harness (12 test cases) covers happy paths, edge cases, and adversarial
+          attempts to bypass guardrails. All logic is real and runnable; mock data is provided
+          for the FAQ knowledge base and system-of-record tickets.
+        </p>
+      </div>
+    </div>
+
+    <!-- Challenge Status -->
+    <div class="card">
+      <h2><span class="icon">✅</span> Challenge Status</h2>
+      <table class="challenge-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Challenge</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>The Mandate</td>
+            <td><span class="status-badge status-done">Done</span></td>
+            <td>Full mandate doc with autonomous decisions, escalation criteria, hard prohibitions</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>The Bones (Architecture)</td>
+            <td><span class="status-badge status-done">Done</span></td>
+            <td>ASCII architecture diagram, routing logic table, Bedrock config, tool schemas</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>The Triage (Core Agent)</td>
+            <td><span class="status-badge status-done">Done</span></td>
+            <td>Full agentic loop via AnthropicBedrock; structured TriageResult with reasoning</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>The Hands (Tools)</td>
+            <td><span class="status-badge status-done">Done</span></td>
+            <td>knowledge_lookup (FAQ search) + check_status (SoR lookup) with Claude tool defs</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>The Test (Eval Harness)</td>
+            <td><span class="status-badge status-done">Done</span></td>
+            <td>12 test cases — 5 happy, 3 edge, 3 adversarial + scorecard output</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Key Decisions -->
+    <div class="card">
+      <h2><span class="icon">⚡</span> Key Decisions</h2>
+      <ul class="decision-list">
+        <li>
+          <strong>Pre-Claude guardrail layer</strong> — keyword and domain checks run before any API call,
+          so malicious or out-of-mandate requests never reach the model. Keeps cost and attack surface low.
+        </li>
+        <li>
+          <strong>Confidence threshold enforced post-loop</strong> — Claude returns a confidence score;
+          the Python layer, not the model, decides whether to escalate. This makes the mandate auditable
+          in code, not hidden in a prompt.
+        </li>
+        <li>
+          <strong>Mock data in JSON files</strong> — no database dependency for the competition; the
+          tool layer reads flat files. Replacing them with real API calls requires changing one function each.
+        </li>
+        <li>
+          <strong>Max tool iteration cap at 5</strong> — prevents runaway loops; if exceeded the ticket
+          auto-escalates rather than hanging or burning tokens.
+        </li>
+      </ul>
+    </div>
+
+    <!-- How We Used Claude Code -->
+    <div class="card">
+      <h2><span class="icon">🤖</span> How We Used Claude Code</h2>
+      <div class="prose">
+        <p>
+          Claude Code scaffolded the entire project from the CLAUDE.md spec — all five challenges
+          were generated in a single session with explicit task tracking via the todo list. The
+          CLAUDE.md acted as a living contract: domain terminology, queue names, priority SLAs,
+          and tool schemas were defined once and referenced consistently across every generated file.
+        </p>
+        <p>
+          The most effective workflow was writing the mandate and architecture docs first, then
+          having Claude use those as context when generating the agent code. This meant the routing
+          logic in <code>triage_agent.py</code> exactly matched the mandate table without needing
+          a correction pass.
+        </p>
+      </div>
+    </div>
+
+    <!-- If We Had Another Hour -->
+    <div class="card">
+      <h2><span class="icon">🚀</span> If We Had Another Hour</h2>
+      <ul class="next-list">
+        <li>Replace mock JSON data with real API calls to ServiceNow or Jira Service Management.</li>
+        <li>Add a <code>send_notification</code> tool to email the requester on auto-resolve with the self-service link.</li>
+        <li>Stream the agent's reasoning in real time to a simple dashboard using Server-Sent Events.</li>
+        <li>Add a confidence calibration pass: run the eval harness 50 times and plot confidence vs. accuracy to tune the 0.70 threshold.</li>
+        <li>Wire up multi-channel ingestion (Slack webhook, email parser) as the front-end to the triage function.</li>
+      </ul>
+    </div>
+
+    <footer>
+      Built with Claude Code &nbsp;·&nbsp; Scenario 3 — Agentic Solution &nbsp;·&nbsp; Session 5
+    </footer>
+
+  </div>
+</body>
+</html>

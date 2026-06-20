@@ -1,0 +1,112 @@
+[
+  {
+    "ticket_id": "TKT-1001",
+    "requester_email": "j.smith@acme.internal",
+    "subject": "Cannot connect to VPN from home",
+    "current_status": "open",
+    "assigned_queue": "NETWORKING",
+    "priority": "P3",
+    "created_at": "2026-06-17T08:00:00Z",
+    "sla_breach": false,
+    "notes": "User reported intermittent VPN drops since firmware update"
+  },
+  {
+    "ticket_id": "TKT-1002",
+    "requester_email": "a.patel@acme.internal",
+    "subject": "Password reset request",
+    "current_status": "open",
+    "assigned_queue": "IDENTITY",
+    "priority": "P4",
+    "created_at": "2026-06-17T07:30:00Z",
+    "sla_breach": false,
+    "notes": "Standard self-service reset; no prior escalations"
+  },
+  {
+    "ticket_id": "TKT-1003",
+    "requester_email": "b.chen@acme.internal",
+    "subject": "Laptop screen cracked",
+    "current_status": "in_progress",
+    "assigned_queue": "HARDWARE",
+    "priority": "P3",
+    "created_at": "2026-06-16T14:00:00Z",
+    "sla_breach": false,
+    "notes": "Loaner device dispatched, repair in progress"
+  },
+  {
+    "ticket_id": "TKT-1004",
+    "requester_email": "m.jones@acme.internal",
+    "subject": "Suspicious email received - possible phishing",
+    "current_status": "open",
+    "assigned_queue": "SECURITY",
+    "priority": "P1",
+    "created_at": "2026-06-17T09:15:00Z",
+    "sla_breach": false,
+    "notes": "User clicked link before reporting; device isolated"
+  },
+  {
+    "ticket_id": "TKT-1005",
+    "requester_email": "r.kumar@acme.internal",
+    "subject": "Adobe Acrobat license needed",
+    "current_status": "open",
+    "assigned_queue": "SOFTWARE",
+    "priority": "P4",
+    "created_at": "2026-06-15T10:00:00Z",
+    "sla_breach": true,
+    "notes": "Awaiting department head approval; SLA breached"
+  },
+  {
+    "ticket_id": "TKT-1006",
+    "requester_email": "t.nguyen@acme.internal",
+    "subject": "Wi-Fi dropping every 30 minutes in Building B",
+    "current_status": "open",
+    "assigned_queue": "NETWORKING",
+    "priority": "P2",
+    "created_at": "2026-06-17T06:00:00Z",
+    "sla_breach": true,
+    "notes": "Multiple users affected; access point may need replacement"
+  },
+  {
+    "ticket_id": "TKT-1007",
+    "requester_email": "c.white@acme.internal",
+    "subject": "MFA app lost - need re-enrollment",
+    "current_status": "open",
+    "assigned_queue": "IDENTITY",
+    "priority": "P3",
+    "created_at": "2026-06-17T08:45:00Z",
+    "sla_breach": false,
+    "notes": "User lost phone; temporary access via backup code pending"
+  },
+  {
+    "ticket_id": "TKT-1008",
+    "requester_email": "s.davis@acme.internal",
+    "subject": "Cannot install Python on work laptop",
+    "current_status": "open",
+    "assigned_queue": "SOFTWARE",
+    "priority": "P3",
+    "created_at": "2026-06-17T09:00:00Z",
+    "sla_breach": false,
+    "notes": "Admin rights required; Software Center doesn't have Python 3.12"
+  },
+  {
+    "ticket_id": "TKT-1009",
+    "requester_email": "l.garcia@acme.internal",
+    "subject": "Accidental deletion of shared drive files",
+    "current_status": "open",
+    "assigned_queue": "SOFTWARE",
+    "priority": "P2",
+    "created_at": "2026-06-17T07:00:00Z",
+    "sla_breach": false,
+    "notes": "20 files deleted from finance share; backup restore in progress"
+  },
+  {
+    "ticket_id": "TKT-1010",
+    "requester_email": "external.user@unknown-domain.com",
+    "subject": "Need access to internal systems",
+    "current_status": "open",
+    "assigned_queue": "ESCALATION",
+    "priority": "P2",
+    "created_at": "2026-06-17T09:30:00Z",
+    "sla_breach": false,
+    "notes": "External domain; identity cannot be verified without manual check"
+  }
+]
