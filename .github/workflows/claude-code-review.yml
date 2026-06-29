@@ -38,7 +38,8 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{github.token}}
           track_progress: true
-          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
+          #plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
+          #plugin_marketplaces: 'https://github.com/accenture-rde-labs/plugins.git'
           plugins: 'code-review@claude-code-plugins'
           prompt: '/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
